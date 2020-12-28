@@ -1,11 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MainHeader from './MainHeader';
-
-import './MainNavigation.css';
-import NavLInks from './NavLInks';
-import SideDrawer from './SideDrawer';
 import Backdrop from '../UIElements/Backdrop';
+import MainHeader from './MainHeader';
+import './MainNavigation.css';
+import NavLinks from './NavLInks';
+import SideDrawer from './SideDrawer';
 
 const MainNavigation = props => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
@@ -23,7 +22,7 @@ const MainNavigation = props => {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
-          <NavLInks />
+          <NavLinks />
         </nav>
       </SideDrawer>
       <MainHeader>
@@ -39,7 +38,7 @@ const MainNavigation = props => {
           <Link to="/">Your Places</Link>
         </h1>
         <nav className="main-navigation__header-nav">
-          <NavLInks />
+          <NavLinks />
         </nav>
       </MainHeader>
     </Fragment>
