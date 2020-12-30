@@ -13,6 +13,7 @@ import {
   VALIDATOR_REQUIRE,
 } from '../../shared/util/validators';
 import './Auth.css';
+import ImageUpload from '../../shared/components/FormElements/ImageUpload';
 
 const Auth = () => {
   const auth = useContext(AuthContext);
@@ -113,6 +114,7 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
+          {!isLoginMode && <ImageUpload center id="image" />}
           <Input
             id="email"
             element="input"
